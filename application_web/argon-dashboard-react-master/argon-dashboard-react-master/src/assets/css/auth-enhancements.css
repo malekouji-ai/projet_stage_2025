@@ -1,0 +1,313 @@
+/* ========================================
+   AMÉLIORATIONS SUPPLÉMENTAIRES AUTH
+   Design ultra-moderne et professionnel
+   ======================================== */
+
+/* Container auth avec alignement parfait */
+.main-content.bg-default {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Centrer le contenu Auth */
+.main-content.bg-default .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content.bg-default .row {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* Icône utilisateur moderne */
+.input-group-text i {
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+}
+
+.input-group-alternative:focus-within .input-group-text i {
+  transform: scale(1.1);
+}
+
+/* Checkbox personnalisée moderne */
+.custom-control-label {
+  font-weight: 500;
+  color: #475569;
+  font-size: 0.9375rem;
+}
+
+.custom-control-label::before {
+  border: 2px solid #cbd5e1 !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+  border-color: #2563eb !important;
+}
+
+.custom-control-label:hover::before {
+  border-color: #2563eb !important;
+}
+
+/* Séparateur "OU" élégant */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.divider span {
+  padding: 0 1rem;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Messages d'erreur/succès modernes */
+.alert {
+  border-radius: 0.75rem !important;
+  border: none !important;
+  padding: 1rem 1.5rem !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  animation: slideInDown 0.3s ease-out !important;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.1)) !important;
+  border-left: 4px solid #10b981 !important;
+  color: #065f46 !important;
+}
+
+.alert-danger {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(220, 38, 38, 0.1)) !important;
+  border-left: 4px solid #ef4444 !important;
+  color: #991b1b !important;
+}
+
+.alert i {
+  font-size: 1.25rem;
+}
+
+/* Footer links */
+.text-center.mt-4 a,
+.row.mt-3 a {
+  color: white !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  display: inline-block !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-center.mt-4 a:hover,
+.row.mt-3 a:hover {
+  color: #93c5fd !important;
+  transform: translateY(-2px);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Bouton en chargement */
+.btn-primary:disabled {
+  opacity: 0.7 !important;
+  cursor: not-allowed !important;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.5; }
+}
+
+/* Logo HKEYITNA styling */
+.auth-logo img {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.auth-logo:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+}
+
+/* Titre "Connectez-vous" moderne */
+h6.text-muted {
+  color: #64748b !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  margin-top: 0.5rem !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Form group spacing */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Card padding responsive */
+@media (max-width: 576px) {
+  .bg-secondary.shadow {
+    border-radius: 1.5rem !important;
+  }
+  
+  .card-header.bg-transparent {
+    padding: 2rem 1.5rem 1rem !important;
+  }
+  
+  .card-body {
+    padding: 1.5rem !important;
+  }
+  
+  .card-footer {
+    padding: 1rem 1.5rem 2rem !important;
+  }
+  
+  .btn-primary {
+    padding: 0.875rem 1.5rem !important;
+  }
+}
+
+/* Focus visible pour accessibilité */
+*:focus-visible {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 2px !important;
+}
+
+/* Selection text color */
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+::-moz-selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading spinner personnalisé */
+.spinner-border {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-width: 0.2rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* Text gradient pour titres */
+.gradient-text {
+  background: linear-gradient(135deg, #2563eb, #7c3aed, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover effect sur la carte complète */
+.bg-secondary.shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px 0 rgba(37, 99, 235, 0.25),
+    0 35px 70px -15px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.6) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effet de typing pour le placeholder */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Badge "Nouveau" ou "Requis" */
+.badge-required {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border-radius: 0.375rem;
+  margin-left: 0.5rem;
+}
+
+/* Effet de particules animées sur le fond */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+}
+
+/* Cercles flottants décoratifs */
+.bg-default .decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-default .decorative-circle:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.2), transparent);
+  animation: float 8s ease-in-out infinite;
+}
+
+.bg-default .decorative-circle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  right: -50px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.2), transparent);
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+/* Version dark mode friendly (optionnel) */
+@media (prefers-color-scheme: dark) {
+  .bg-secondary.shadow {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+}

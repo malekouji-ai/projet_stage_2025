@@ -1,0 +1,419 @@
+/* ========================================
+   HKEYITNA - Corrections finales responsive
+   ======================================== */
+
+/* ========================================
+   Fix Header avec statistiques
+   ======================================== */
+.header .container-fluid {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .header .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* ========================================
+   Fix spacing des cartes stats
+   ======================================== */
+.header .row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.header .row > [class*='col-'] {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+  .header .row > [class*='col-xl-'] {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .row {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  
+  .header .row > [class*='col-'] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ========================================
+   Fix Main Content Margin
+   ======================================== */
+.main-content {
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .main-content {
+    margin-left: 250px !important;
+    width: calc(100% - 250px);
+    transition: margin-left 0.3s ease;
+  }
+}
+
+@media (max-width: 1199px) {
+  .main-content {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
+
+/* ========================================
+   Fix Container padding
+   ======================================== */
+.container-fluid {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 576px) {
+  .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .mt--7,
+  .mt--8,
+  .mt--9 {
+    margin-top: -3rem !important;
+  }
+}
+
+/* ========================================
+   Fix Card spacing
+   ======================================== */
+.card {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ========================================
+   Fix Navbar top
+   ======================================== */
+.navbar-top {
+  padding: 1rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-top {
+    padding: 0.75rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   Fix Form dans modales
+   ======================================== */
+@media (max-width: 768px) {
+  .modal-body {
+    padding: 1.5rem 1rem;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .modal-footer .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-left: 0 !important;
+  }
+  
+  .modal-footer .btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ========================================
+   Fix Auth pages (Login/Signup)
+   ======================================== */
+@media (max-width: 768px) {
+  .auth-page .col-lg-5,
+  .auth-page .col-lg-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .auth-page .card {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* ========================================
+   Fix Input groups
+   ======================================== */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .input-group {
+    flex-direction: row;
+  }
+  
+  .input-group-prepend,
+  .input-group-append {
+    display: flex;
+  }
+  
+  .input-group .form-control {
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+  }
+}
+
+/* ========================================
+   Fix Buttons group
+   ======================================== */
+@media (max-width: 576px) {
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-group .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .btn-group .btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ========================================
+   Fix Card header actions
+   ======================================== */
+.card-header .row {
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .card-header .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .card-header .row > div {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-header .row > div:last-child {
+    margin-bottom: 0;
+  }
+  
+  .card-header .text-right {
+    text-align: left !important;
+  }
+}
+
+/* ========================================
+   Fix Alerts
+   ======================================== */
+.alert {
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+}
+
+@media (max-width: 576px) {
+  .alert {
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .alert .close {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* ========================================
+   Fix Progress bars
+   ======================================== */
+@media (max-width: 576px) {
+  .progress {
+    height: 0.5rem;
+  }
+}
+
+/* ========================================
+   Fix Badges
+   ======================================== */
+@media (max-width: 576px) {
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* ========================================
+   Fix Icons
+   ======================================== */
+@media (max-width: 576px) {
+  .icon-shape {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .icon-shape i {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   Fix Typography responsive
+   ======================================== */
+@media (max-width: 768px) {
+  h1, .h1 {
+    font-size: 2rem;
+  }
+  
+  h2, .h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3, .h3 {
+    font-size: 1.5rem;
+  }
+  
+  .display-2 {
+    font-size: 2.5rem;
+  }
+  
+  .display-3 {
+    font-size: 2rem;
+  }
+  
+  .display-4 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h1, .h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2, .h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3, .h3 {
+    font-size: 1.25rem;
+  }
+  
+  .display-2 {
+    font-size: 2rem;
+  }
+  
+  .display-3 {
+    font-size: 1.5rem;
+  }
+  
+  .display-4 {
+    font-size: 1.25rem;
+  }
+}
+
+/* ========================================
+   Fix Navbar vertical (sidebar)
+   ======================================== */
+@media (max-width: 1199px) {
+  .navbar-vertical {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    z-index: 1050;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar-vertical.show {
+    transform: translateX(0);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ========================================
+   Fix overflow et scroll
+   ======================================== */
+body {
+  overflow-x: hidden;
+}
+
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========================================
+   Améliorer la lisibilité sur mobile
+   ======================================== */
+@media (max-width: 576px) {
+  body {
+    font-size: 0.9rem;
+  }
+  
+  .small, small {
+    font-size: 0.8rem;
+  }
+  
+  .text-sm {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* ========================================
+   Fix pour éviter les débordements
+   ======================================== */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-body img {
+  max-width: 100%;
+  height: auto;
+}

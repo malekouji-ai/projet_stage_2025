@@ -1,0 +1,339 @@
+/* ========================================
+   HKEYITNA - Fix Layout Principal
+   ======================================== */
+
+/* Force le bon positionnement */
+body {
+  overflow-x: hidden;
+}
+
+/* Sidebar fixe */
+.navbar-vertical {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  z-index: 1000 !important;
+}
+
+/* Main content avec marge pour la sidebar */
+@media (min-width: 1200px) {
+  .main-content {
+    margin-left: 250px !important;
+    width: calc(100% - 250px) !important;
+  }
+  
+  .sidenav-toggler {
+    display: none !important;
+  }
+}
+
+/* Sur mobile, sidebar cachée par défaut */
+@media (max-width: 1199px) {
+  .navbar-vertical {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar-vertical.show {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* Header avec statistiques */
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+/* Container principal */
+.container-fluid {
+  width: 100%;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Fix pour les cartes qui dépassent */
+.row {
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+
+.row > * {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+/* Cartes de statistiques - hauteur uniforme */
+.card-stats {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-stats .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Fix pour le contenu qui déborde */
+@media (min-width: 1200px) {
+  .header .container-fluid {
+    max-width: 100%;
+  }
+}
+
+/* Espacement vertical */
+.mt--7 {
+  margin-top: -6rem !important;
+}
+
+@media (max-width: 768px) {
+  .mt--7 {
+    margin-top: -3rem !important;
+  }
+}
+
+/* Table responsive fix */
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix pour les dropdowns qui sortent de l'écran */
+.dropdown-menu {
+  max-width: 300px;
+}
+
+/* Fix pour le footer */
+.footer {
+  margin-left: 0;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+  }
+}
+
+/* Navbar top - fix z-index */
+.navbar-top {
+  position: relative;
+  z-index: 100;
+}
+
+/* Fix pour les modales */
+.modal {
+  z-index: 1060;
+}
+
+.modal-backdrop {
+  z-index: 1050;
+}
+
+/* Sidebar overlay pour mobile */
+@media (max-width: 1199px) {
+  .sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .sidenav-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Bouton hamburger */
+  .sidenav-toggler {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: var(--hk-blue);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(107, 155, 209, 0.3);
+  }
+  
+  .sidenav-toggler i {
+    font-size: 1.25rem;
+  }
+}
+
+/* Fix pour éviter le scroll horizontal */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  overflow-x: hidden;
+}
+
+/* Fix alignement texte dans les cartes stats */
+.card-stats h5 {
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.card-stats .h2 {
+  line-height: 1.2;
+}
+
+/* Fix pour les badges dans le tableau */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Fix pour les boutons d'action dans le tableau */
+.table .btn-icon-only {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation douce pour le chargement */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Fix pour les inputs dans les modales */
+.modal .form-control {
+  width: 100%;
+}
+
+.modal .input-group {
+  width: 100%;
+}
+
+/* Fix pour le texte qui déborde */
+.text-wrap {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Fix pour les icônes dans la sidebar */
+.navbar-vertical .nav-link-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Améliorer l'espacement des sections */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Fix pour le header avec les stats */
+.header .row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.header .row > [class*='col-'] {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* Fix pour éviter que le contenu touche les bords */
+@media (max-width: 576px) {
+  .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .card {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Fix pour le logo dans la sidebar */
+.navbar-vertical .navbar-brand {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fix pour les alertes */
+.alert {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Fix pour la pagination */
+.pagination {
+  flex-wrap: wrap;
+}
+
+/* Fix pour les breadcrumbs */
+.breadcrumb {
+  flex-wrap: wrap;
+}
+
+/* Assurer que tout le contenu est bien espacé */
+.pb-8 {
+  padding-bottom: 8rem !important;
+}
+
+.pt-5 {
+  padding-top: 3rem !important;
+}
+
+.pt-md-8 {
+  padding-top: 8rem !important;
+}
+
+@media (max-width: 768px) {
+  .pb-8 {
+    padding-bottom: 4rem !important;
+  }
+  
+  .pt-md-8 {
+    padding-top: 4rem !important;
+  }
+}

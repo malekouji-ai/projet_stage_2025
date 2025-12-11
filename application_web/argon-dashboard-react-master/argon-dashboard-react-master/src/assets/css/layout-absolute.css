@@ -1,0 +1,284 @@
+/* ========================================
+   HKEYITNA - FIX LAYOUT ABSOLU
+   Ce fichier force le bon positionnement
+   ======================================== */
+
+/* Container général */
+body,
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Root app */
+#root {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+}
+
+/* SIDEBAR - Position FIXE absolue */
+.navbar-vertical,
+#sidenav-main,
+.sidenav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 250px !important;
+  height: 100vh !important;
+  z-index: 1050 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  transform: translateX(0) !important;
+}
+
+/* Container de la sidebar */
+.navbar-vertical .container-fluid {
+  padding: 0 !important;
+}
+
+/* MAIN CONTENT - Décalé de 250px */
+.main-content {
+  margin-left: 250px !important;
+  width: calc(100% - 250px) !important;
+  min-height: 100vh !important;
+  position: relative !important;
+  display: block !important;
+  background: #f7fafc !important;
+}
+
+/* Header dans le main content */
+.main-content .header {
+  position: relative !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+}
+
+/* Container fluid dans le main content */
+.main-content .container-fluid {
+  width: 100% !important;
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+/* Navbar top */
+.main-content .navbar-top {
+  position: relative !important;
+  width: 100% !important;
+  margin: 0 !important;
+  background: white !important;
+  z-index: 10 !important;
+}
+
+/* Row dans le header */
+.header .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-right: -0.75rem !important;
+  margin-left: -0.75rem !important;
+}
+
+/* Colonnes */
+.header .row > [class*="col-"] {
+  padding-right: 0.75rem !important;
+  padding-left: 0.75rem !important;
+}
+
+/* Cartes de stats */
+.card-stats {
+  margin-bottom: 1.5rem !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Section après le header */
+.mt--7 {
+  margin-top: -6rem !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Tables et contenu */
+.card {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.table-responsive {
+  width: 100% !important;
+  overflow-x: auto !important;
+}
+
+/* Footer */
+.footer {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 2.5rem 0 !important;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* Desktop >= 1200px */
+@media (min-width: 1200px) {
+  .navbar-vertical,
+  #sidenav-main {
+    transform: translateX(0) !important;
+    display: block !important;
+  }
+  
+  .main-content {
+    margin-left: 250px !important;
+    width: calc(100% - 250px) !important;
+  }
+  
+  .sidenav-toggler {
+    display: none !important;
+  }
+}
+
+/* Tablet 768-1199px */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .navbar-vertical,
+  #sidenav-main {
+    transform: translateX(-100%) !important;
+  }
+  
+  .navbar-vertical.show,
+  #sidenav-main.show {
+    transform: translateX(0) !important;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  .sidenav-toggler {
+    display: block !important;
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    z-index: 1060 !important;
+  }
+  
+  .header .container-fluid {
+    padding-left: 5rem !important;
+  }
+}
+
+/* Mobile < 768px */
+@media (max-width: 767px) {
+  .navbar-vertical,
+  #sidenav-main {
+    width: 280px !important;
+    transform: translateX(-100%) !important;
+  }
+  
+  .navbar-vertical.show,
+  #sidenav-main.show {
+    transform: translateX(0) !important;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  .sidenav-toggler {
+    display: block !important;
+    position: fixed !important;
+    top: 0.75rem !important;
+    left: 0.75rem !important;
+    z-index: 1060 !important;
+  }
+  
+  .header {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  .header .container-fluid {
+    padding-left: 4.5rem !important;
+  }
+  
+  .mt--7 {
+    margin-top: -3rem !important;
+  }
+  
+  .card-stats {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Très petit mobile < 400px */
+@media (max-width: 399px) {
+  .navbar-vertical,
+  #sidenav-main {
+    width: 260px !important;
+  }
+  
+  .header {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* ========================================
+   FIXES Z-INDEX
+   ======================================== */
+
+.navbar-vertical {
+  z-index: 1050 !important;
+}
+
+.sidenav-toggler {
+  z-index: 1060 !important;
+}
+
+.sidenav-overlay {
+  z-index: 1040 !important;
+}
+
+.navbar-top {
+  z-index: 100 !important;
+}
+
+.header {
+  z-index: 5 !important;
+}
+
+.modal {
+  z-index: 1070 !important;
+}
+
+.modal-backdrop {
+  z-index: 1065 !important;
+}
+
+/* ========================================
+   CLEAR FLOATS
+   ======================================== */
+
+.clearfix::after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+
+/* Empêcher les débordements */
+* {
+  box-sizing: border-box !important;
+}
+
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}

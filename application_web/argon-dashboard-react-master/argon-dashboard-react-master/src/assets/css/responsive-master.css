@@ -1,0 +1,927 @@
+/* ========================================
+   HKEYITNA - RESPONSIVE MASTER CSS
+   Correction complète du design responsive
+   ======================================== */
+
+/* ========================================
+   BASE - Reset et configuration globale
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ========================================
+   LAYOUT PRINCIPAL - Structure fixe
+   ======================================== */
+
+/* Sidebar Navigation - TOUJOURS fixe sur desktop */
+.navbar-vertical {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  height: 100vh !important;
+  z-index: 1050 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  background: linear-gradient(180deg, #5B8AB8 0%, #6B9BD1 50%, #ADD8E6 100%) !important;
+  box-shadow: 2px 0 20px rgba(91, 138, 184, 0.15) !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+/* Logo dans la sidebar */
+.navbar-vertical .navbar-brand {
+  padding: 1.5rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 0.5rem !important;
+  margin: 1rem !important;
+  min-height: 100px !important;
+}
+
+.navbar-vertical .navbar-brand img {
+  max-height: 80px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* Navigation links */
+.navbar-vertical .navbar-nav {
+  padding: 1rem 0 !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 500 !important;
+  padding: 0.875rem 1rem !important;
+  margin: 0.25rem 0.5rem !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateX(5px) !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link.active {
+  background: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2) !important;
+  font-weight: 600 !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link i {
+  color: #FFFACD !important;
+  font-size: 1rem !important;
+  margin-right: 0.75rem !important;
+}
+
+/* Main Content - Ajusté pour la sidebar */
+.main-content {
+  position: relative !important;
+  min-height: 100vh !important;
+  transition: margin-left 0.3s ease-in-out !important;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* DESKTOP - Large screens (≥ 1200px) */
+@media (min-width: 1200px) {
+  .navbar-vertical {
+    transform: translateX(0) !important;
+  }
+  
+  .main-content {
+    margin-left: 250px !important;
+    width: calc(100% - 250px) !important;
+  }
+  
+  /* Masquer le bouton menu sur desktop */
+  .sidenav-toggler,
+  .navbar-toggler {
+    display: none !important;
+  }
+}
+
+/* TABLET - Medium screens (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .navbar-vertical {
+    transform: translateX(-100%) !important;
+  }
+  
+  .navbar-vertical.show {
+    transform: translateX(0) !important;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Bouton hamburger visible */
+  .sidenav-toggler {
+    display: block !important;
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    z-index: 1060 !important;
+    background: var(--hk-blue, #6B9BD1) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(107, 155, 209, 0.3) !important;
+  }
+  
+  /* Overlay pour fermer la sidebar */
+  .sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .sidenav-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* MOBILE - Small screens (< 768px) */
+@media (max-width: 767px) {
+  .navbar-vertical {
+    transform: translateX(-100%) !important;
+    width: 280px !important;
+  }
+  
+  .navbar-vertical.show {
+    transform: translateX(0) !important;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Bouton hamburger */
+  .sidenav-toggler {
+    display: block !important;
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    z-index: 1060 !important;
+    background: var(--hk-blue, #6B9BD1) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem 1rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(107, 155, 209, 0.3) !important;
+  }
+  
+  .sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .sidenav-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ========================================
+   HEADER - Section statistiques
+   ======================================== */
+
+.header {
+  position: relative !important;
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+  background: linear-gradient(135deg, #ADD8E6 0%, #6B9BD1 50%, #5B8AB8 100%) !important;
+}
+
+.header .container-fluid {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+  width: 100% !important;
+}
+
+/* Cartes de statistiques */
+.card-stats {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 1.5rem !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.card-stats:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-stats .card-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 1.5rem !important;
+}
+
+.card-stats .row {
+  margin: 0 !important;
+}
+
+.card-stats h5 {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 0.5rem !important;
+  color: #8898aa !important;
+}
+
+.card-stats .h2 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  color: #32325d !important;
+}
+
+/* Responsive cartes stats */
+@media (max-width: 991px) {
+  .header {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  
+  .card-stats .h2 {
+    font-size: 1.75rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  .card-stats {
+    margin-bottom: 1rem !important;
+  }
+  
+  .card-stats .h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .header {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .header .container-fluid {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+  
+  .card-stats .card-body {
+    padding: 1rem !important;
+  }
+  
+  .card-stats .h2 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* ========================================
+   CONTAINER - Espacement principal
+   ======================================== */
+
+.container-fluid {
+  width: 100% !important;
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+@media (max-width: 575px) {
+  .container-fluid {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+}
+
+/* Section avec marge négative pour remonter les cartes */
+.mt--7 {
+  margin-top: -6rem !important;
+}
+
+@media (max-width: 991px) {
+  .mt--7 {
+    margin-top: -4rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .mt--7 {
+    margin-top: -3rem !important;
+  }
+}
+
+/* ========================================
+   GRID SYSTEM - Colonnes responsive
+   ======================================== */
+
+.row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-right: -0.75rem !important;
+  margin-left: -0.75rem !important;
+}
+
+.row > * {
+  padding-right: 0.75rem !important;
+  padding-left: 0.75rem !important;
+}
+
+/* Colonnes responsive */
+@media (max-width: 575px) {
+  .col-xl-3,
+  .col-lg-6,
+  .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .col-xl-3,
+  .col-lg-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-xl-3 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  
+  .col-lg-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .col-xl-3 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-xl-3 {
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+  }
+  
+  .col-lg-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* ========================================
+   CARDS - Cartes générales
+   ======================================== */
+
+.card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  word-wrap: break-word !important;
+  background-color: #fff !important;
+  background-clip: border-box !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.card-header {
+  padding: 1.25rem 1.5rem !important;
+  margin-bottom: 0 !important;
+  background-color: #fff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-top-left-radius: calc(0.75rem - 1px) !important;
+  border-top-right-radius: calc(0.75rem - 1px) !important;
+}
+
+.card-body {
+  flex: 1 1 auto !important;
+  padding: 1.5rem !important;
+}
+
+@media (max-width: 575px) {
+  .card {
+    margin-bottom: 1rem !important;
+  }
+  
+  .card-header {
+    padding: 1rem !important;
+  }
+  
+  .card-body {
+    padding: 1rem !important;
+  }
+}
+
+/* ========================================
+   TABLES - Tableaux responsive
+   ======================================== */
+
+.table-responsive {
+  display: block !important;
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.table {
+  width: 100% !important;
+  margin-bottom: 1rem !important;
+  background-color: transparent !important;
+  border-collapse: collapse !important;
+}
+
+.table th,
+.table td {
+  padding: 1rem !important;
+  vertical-align: middle !important;
+  border-top: 1px solid #e9ecef !important;
+}
+
+.table thead th {
+  vertical-align: bottom !important;
+  border-bottom: 2px solid #e9ecef !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px !important;
+  color: #8898aa !important;
+}
+
+/* Responsive table - transformation en cartes sur mobile */
+@media (max-width: 767px) {
+  .table-responsive {
+    border: 0 !important;
+  }
+  
+  .table thead {
+    display: none !important;
+  }
+  
+  .table tr {
+    display: block !important;
+    margin-bottom: 1rem !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 0.5rem !important;
+    background: white !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .table td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0.75rem 1rem !important;
+    border: none !important;
+    border-bottom: 1px solid #f6f9fc !important;
+  }
+  
+  .table td:last-child {
+    border-bottom: none !important;
+  }
+  
+  .table td::before {
+    content: attr(data-label) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.75rem !important;
+    color: #8898aa !important;
+    margin-right: 1rem !important;
+  }
+}
+
+/* ========================================
+   BUTTONS - Boutons responsive
+   ======================================== */
+
+.btn {
+  display: inline-block !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+  user-select: none !important;
+  border: 1px solid transparent !important;
+  padding: 0.625rem 1.25rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.75rem !important;
+}
+
+@media (max-width: 575px) {
+  .btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .btn-sm {
+    padding: 0.375rem 0.75rem !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+/* ========================================
+   FORMS - Formulaires responsive
+   ======================================== */
+
+.form-control {
+  display: block !important;
+  width: 100% !important;
+  padding: 0.625rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 0.5rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.form-control:focus {
+  color: #495057 !important;
+  background-color: #fff !important;
+  border-color: #6B9BD1 !important;
+  outline: 0 !important;
+  box-shadow: 0 0 0 0.2rem rgba(107, 155, 209, 0.25) !important;
+}
+
+.form-group {
+  margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 575px) {
+  .form-control {
+    font-size: 16px !important; /* Évite le zoom sur iOS */
+  }
+  
+  .form-group {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* ========================================
+   MODALS - Modales responsive
+   ======================================== */
+
+.modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1070 !important;
+  display: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  outline: 0 !important;
+}
+
+.modal-dialog {
+  position: relative !important;
+  width: auto !important;
+  margin: 0.5rem !important;
+  pointer-events: none !important;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px !important;
+    margin: 1.75rem auto !important;
+  }
+}
+
+.modal-content {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  pointer-events: auto !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  border-radius: 0.75rem !important;
+  outline: 0 !important;
+}
+
+.modal-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1060 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: #000 !important;
+}
+
+.modal-backdrop.show {
+  opacity: 0.5 !important;
+}
+
+/* ========================================
+   FOOTER - Pied de page
+   ======================================== */
+
+.footer {
+  padding: 2.5rem 0 !important;
+  background: #f7fafc !important;
+  margin-top: auto !important;
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    margin-left: 250px !important;
+    width: calc(100% - 250px) !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .footer {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    padding: 1.5rem 0 !important;
+  }
+}
+
+/* ========================================
+   NAVBAR TOP - Barre supérieure
+   ======================================== */
+
+.navbar-top {
+  position: relative !important;
+  z-index: 100 !important;
+  padding: 1rem 0 !important;
+}
+
+.navbar-top .container-fluid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+@media (max-width: 575px) {
+  .navbar-top {
+    padding: 0.75rem 0 !important;
+  }
+}
+
+/* ========================================
+   UTILITIES - Classes utilitaires
+   ======================================== */
+
+/* Espacement */
+.pb-8 {
+  padding-bottom: 8rem !important;
+}
+
+.pt-5 {
+  padding-top: 3rem !important;
+}
+
+.pt-md-8 {
+  padding-top: 8rem !important;
+}
+
+@media (max-width: 991px) {
+  .pb-8 {
+    padding-bottom: 6rem !important;
+  }
+  
+  .pt-md-8 {
+    padding-top: 6rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .pb-8 {
+    padding-bottom: 4rem !important;
+  }
+  
+  .pt-5 {
+    padding-top: 2rem !important;
+  }
+  
+  .pt-md-8 {
+    padding-top: 4rem !important;
+  }
+}
+
+/* Text utilities */
+.text-muted {
+  color: #8898aa !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+@media (max-width: 575px) {
+  .text-nowrap {
+    white-space: normal !important;
+  }
+}
+
+/* ========================================
+   BADGES - Étiquettes
+   ======================================== */
+
+.badge {
+  display: inline-block !important;
+  padding: 0.35rem 0.65rem !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  vertical-align: baseline !important;
+  border-radius: 0.375rem !important;
+}
+
+@media (max-width: 575px) {
+  .badge {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+}
+
+/* ========================================
+   ICONS - Icônes
+   ======================================== */
+
+.icon {
+  width: 3rem !important;
+  height: 3rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0.75rem !important;
+}
+
+.icon i {
+  font-size: 1.25rem !important;
+}
+
+@media (max-width: 575px) {
+  .icon {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+  
+  .icon i {
+    font-size: 1rem !important;
+  }
+}
+
+/* ========================================
+   ANIMATIONS - Transitions fluides
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card,
+.table tr {
+  animation: fadeIn 0.3s ease !important;
+}
+
+/* ========================================
+   SCROLLBAR - Personnalisation
+   ======================================== */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6B9BD1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5B8AB8;
+}
+
+/* ========================================
+   FIX CHROME AUTOFILL
+   ======================================== */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* ========================================
+   PRINT - Styles d'impression
+   ======================================== */
+
+@media print {
+  .navbar-vertical,
+  .sidenav-toggler,
+  .footer {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}

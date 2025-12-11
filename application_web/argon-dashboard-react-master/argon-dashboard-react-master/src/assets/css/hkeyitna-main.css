@@ -1,0 +1,765 @@
+/*!
+ * HKEYITNA - Application de synchronisation EDT/Outlook
+ * Design professionnel moderne basé sur Argon Dashboard
+ * Version: 2.0.0
+ */
+
+/* =========================================================
+   1. VARIABLES GLOBALES
+   ========================================================= */
+
+:root {
+  /* Couleurs principales - Palette professionnelle */
+  --primary: #5e72e4;
+  --primary-dark: #3b4ab9;
+  --primary-light: #7c8eef;
+  
+  --secondary: #f7fafc;
+  --secondary-dark: #e9ecef;
+  
+  --success: #2dce89;
+  --info: #11cdef;
+  --warning: #fb6340;
+  --danger: #f5365c;
+  
+  /* Couleurs neutres */
+  --white: #fff;
+  --gray-100: #f6f9fc;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #8898aa;
+  --gray-700: #525f7f;
+  --gray-800: #32325d;
+  --gray-900: #212529;
+  --black: #000;
+  
+  /* Dégradés modernes */
+  --gradient-primary: linear-gradient(87deg, #5e72e4 0, #825ee4 100%);
+  --gradient-success: linear-gradient(87deg, #2dce89 0, #2dcecc 100%);
+  --gradient-info: linear-gradient(87deg, #11cdef 0, #1171ef 100%);
+  --gradient-warning: linear-gradient(87deg, #fb6340 0, #fbb140 100%);
+  --gradient-danger: linear-gradient(87deg, #f5365c 0, #f56036 100%);
+  --gradient-default: linear-gradient(87deg, #172b4d 0, #1a174d 100%);
+  
+  /* Ombres */
+  --box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+  --box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --box-shadow-lg: 0 0 3rem rgba(136, 152, 170, 0.175);
+  
+  /* Transitions */
+  --transition-base: all 0.15s ease;
+  --transition-fast: all 0.1s ease;
+  --transition-slow: all 0.3s ease;
+  
+  /* Border radius */
+  --border-radius: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 0.75rem;
+}
+
+/* =========================================================
+   2. RESET & BASE
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-700);
+  background-color: var(--gray-100);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--gray-800);
+}
+
+/* =========================================================
+   3. SIDEBAR - Navigation verticale
+   ========================================================= */
+
+.navbar-vertical {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: var(--gradient-default);
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+  z-index: 1050;
+  overflow-y: auto;
+  transition: var(--transition-base);
+}
+
+.navbar-vertical .navbar-brand {
+  padding: 1.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 1rem;
+  border-radius: var(--border-radius-lg);
+  transition: var(--transition-base);
+}
+
+.navbar-vertical .navbar-brand:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.navbar-vertical .navbar-brand img {
+  max-height: 2.5rem;
+}
+
+/* Navigation items */
+.navbar-vertical .navbar-nav {
+  padding: 1rem 0;
+}
+
+.navbar-vertical .nav-item {
+  margin: 0 1rem;
+}
+
+.navbar-vertical .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  transition: var(--transition-base);
+  margin-bottom: 0.25rem;
+}
+
+.navbar-vertical .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.navbar-vertical .nav-link.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.navbar-vertical .nav-link i {
+  margin-right: 0.75rem;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: var(--transition-fast);
+}
+
+.navbar-vertical .nav-link:hover i,
+.navbar-vertical .nav-link.active i {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* =========================================================
+   4. MAIN CONTENT - Zone de contenu
+   ========================================================= */
+
+.main-content {
+  margin-left: 250px;
+  min-height: 100vh;
+  background-color: var(--gray-100);
+  transition: var(--transition-base);
+}
+
+/* =========================================================
+   5. NAVBAR TOP - Barre supérieure
+   ========================================================= */
+
+.navbar-top {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1.5rem;
+}
+
+.navbar-top .navbar-search {
+  flex: 1;
+  max-width: 400px;
+}
+
+.navbar-top .form-control {
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  transition: var(--transition-base);
+}
+
+.navbar-top .form-control:focus {
+  background-color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(94, 114, 228, 0.1);
+}
+
+/* =========================================================
+   6. HEADER - En-tête des pages
+   ========================================================= */
+
+.header {
+  position: relative;
+  padding: 2rem 0 6rem;
+  background: var(--gradient-primary);
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+.header .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+.header h1,
+.header h2 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   7. CARDS - Cartes de contenu
+   ========================================================= */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition-base);
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: var(--box-shadow-lg);
+  transform: translateY(-5px);
+}
+
+.card-header {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.card-header h3,
+.card-header h4,
+.card-header h5 {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.5rem;
+}
+
+.card-footer {
+  padding: 1.25rem 1.5rem;
+  background-color: var(--gray-100);
+  border-top: 1px solid var(--gray-200);
+  border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+}
+
+/* Card Stats - Cartes de statistiques */
+.card-stats {
+  border: 0;
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+}
+
+.card-stats .card-body {
+  padding: 1rem 1.5rem;
+}
+
+.card-stats .card-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.card-stats .h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: var(--gray-800);
+}
+
+.card-stats .icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+  transition: var(--transition-base);
+}
+
+.card-stats:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.card-stats .icon i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Icon colors */
+.icon.bg-gradient-red { background: var(--gradient-danger); }
+.icon.bg-gradient-orange { background: var(--gradient-warning); }
+.icon.bg-gradient-green { background: var(--gradient-success); }
+.icon.bg-gradient-info { background: var(--gradient-info); }
+.icon.bg-gradient-primary { background: var(--gradient-primary); }
+
+/* =========================================================
+   8. BUTTONS - Boutons
+   ========================================================= */
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: var(--border-radius);
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--gradient-primary);
+  border-color: var(--primary);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.btn-success {
+  color: #fff;
+  background: var(--gradient-success);
+  border-color: var(--success);
+}
+
+.btn-info {
+  color: #fff;
+  background: var(--gradient-info);
+  border-color: var(--info);
+}
+
+.btn-warning {
+  color: #fff;
+  background: var(--gradient-warning);
+  border-color: var(--warning);
+}
+
+.btn-danger {
+  color: #fff;
+  background: var(--gradient-danger);
+  border-color: var(--danger);
+}
+
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.btn-lg {
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* =========================================================
+   9. TABLES - Tableaux
+   ========================================================= */
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+
+.table thead th {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray-600);
+  background-color: var(--gray-100);
+  border: 0;
+  padding: 0.75rem 1.5rem;
+}
+
+.table tbody td {
+  font-size: 0.8125rem;
+  padding: 1rem 1.5rem;
+  vertical-align: middle;
+  border: 0;
+  background-color: #fff;
+}
+
+.table tbody tr {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: var(--transition-base);
+}
+
+.table tbody tr:hover {
+  box-shadow: var(--box-shadow);
+  transform: scale(1.01);
+  background-color: var(--gray-100);
+}
+
+.table tbody tr td:first-child {
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.table tbody tr td:last-child {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* =========================================================
+   10. BADGES - Étiquettes
+   ========================================================= */
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary { background-color: var(--primary); color: #fff; }
+.badge-success { background-color: var(--success); color: #fff; }
+.badge-info { background-color: var(--info); color: #fff; }
+.badge-warning { background-color: var(--warning); color: #fff; }
+.badge-danger { background-color: var(--danger); color: #fff; }
+.badge-secondary { background-color: var(--gray-500); color: #fff; }
+
+/* =========================================================
+   11. FORMS - Formulaires
+   ========================================================= */
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--gray-700);
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  transition: var(--transition-base);
+}
+
+.form-control:focus {
+  color: var(--gray-700);
+  background-color: #fff;
+  border-color: var(--primary);
+  outline: 0;
+  box-shadow: 0 3px 9px rgba(50, 50, 93, 0.11), 0 0 0 3px rgba(94, 114, 228, 0.1);
+}
+
+.form-control::placeholder {
+  color: var(--gray-400);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* =========================================================
+   12. MODALS - Boîtes de dialogue
+   ========================================================= */
+
+.modal-content {
+  border: 0;
+  border-radius: var(--border-radius-xl);
+  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.17);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--gray-200);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--gray-200);
+  padding: 1.5rem;
+  border-radius: 0 0 var(--border-radius-xl) var(--border-radius-xl);
+}
+
+/* =========================================================
+   13. ALERTS - Messages d'alerte
+   ========================================================= */
+
+.alert {
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-radius: var(--border-radius);
+  border-left: 3px solid;
+}
+
+.alert-success {
+  background-color: rgba(45, 206, 137, 0.1);
+  border-left-color: var(--success);
+  color: #0e6245;
+}
+
+.alert-info {
+  background-color: rgba(17, 205, 239, 0.1);
+  border-left-color: var(--info);
+  color: #084c61;
+}
+
+.alert-warning {
+  background-color: rgba(251, 99, 64, 0.1);
+  border-left-color: var(--warning);
+  color: #7a2c0f;
+}
+
+.alert-danger {
+  background-color: rgba(245, 54, 92, 0.1);
+  border-left-color: var(--danger);
+  color: #6d1b2d;
+}
+
+/* =========================================================
+   14. UTILITIES - Classes utilitaires
+   ========================================================= */
+
+/* Spacing */
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+
+.mt-0 { margin-top: 0 !important; }
+.mt-1 { margin-top: 0.25rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+
+.pb-8 { padding-bottom: 8rem !important; }
+
+/* Text */
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
+.text-white { color: #fff !important; }
+.text-muted { color: var(--gray-500) !important; }
+
+.font-weight-bold { font-weight: 600 !important; }
+
+/* Display */
+.d-flex { display: flex !important; }
+.d-block { display: block !important; }
+.d-none { display: none !important; }
+
+.align-items-center { align-items: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.justify-content-center { justify-content: center !important; }
+
+/* =========================================================
+   15. RESPONSIVE - Design adaptatif
+   ========================================================= */
+
+@media (max-width: 1199px) {
+  .navbar-vertical {
+    transform: translateX(-250px);
+  }
+  
+  .navbar-vertical.show {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .sidenav-toggler {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 1.5rem 0 4rem;
+  }
+  
+  .card-stats .card-body {
+    padding: 1rem;
+  }
+  
+  .table thead {
+    display: none;
+  }
+  
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+  }
+  
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--gray-800);
+  }
+  
+  .table tbody td:first-child {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+  
+  .table tbody td:last-child {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border-bottom: 0;
+  }
+}
+
+/* =========================================================
+   16. ANIMATIONS
+   ========================================================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease;
+}
+
+/* =========================================================
+   17. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Dégradé bleu comme dans votre logo (clair à foncé) -->
+  <defs>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5EA2D8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E4A7C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo H stylisé avec effet arrondi et fluide -->
+  <g transform="translate(200, 150)">
+    <!-- Branche gauche du H (style organique/arrondi) -->
+    <path d="M -55,-50 
+             Q -55,-65 -40,-68 
+             Q -25,-71 -15,-60 
+             L -5,-30 
+             Q 0,-10 -5,10 
+             L -15,40 
+             Q -20,55 -35,60 
+             Q -50,65 -60,55 
+             Q -65,45 -60,30 
+             L -50,5 
+             Q -45,-10 -50,-30 
+             Z" 
+          fill="url(#blueGradient)" 
+          stroke="none"/>
+    
+    <!-- Branche droite du H (style organique/arrondi) -->
+    <path d="M 15,-60 
+             Q 20,-70 35,-72 
+             Q 50,-74 60,-62 
+             Q 67,-50 63,-35 
+             L 45,15 
+             Q 40,35 45,50 
+             L 50,62 
+             Q 53,72 43,78 
+             Q 30,84 18,78 
+             Q 8,72 6,60 
+             L -4,25 
+             Q -9,5 -4,-15 
+             L 5,-48 
+             Q 8,-56 12,-60 
+             Z" 
+          fill="url(#blueGradient)" 
+          stroke="none"/>
+    
+    <!-- Connexion centrale (barre horizontale arrondie du H) -->
+    <ellipse cx="-8" cy="0" rx="40" ry="14" 
+             fill="url(#blueGradient)" 
+             transform="rotate(-10 -8 0)"/>
+  </g>
+  
+  <!-- Texte HKEYITNA avec espacement -->
+  <text x="200" y="290" 
+        font-family="Arial, Helvetica, sans-serif" 
+        font-size="46" 
+        font-weight="600" 
+        text-anchor="middle" 
+        fill="#5EA2D8"
+        letter-spacing="3">HKEYITNA</text>
+</svg>

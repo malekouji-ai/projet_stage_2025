@@ -1,0 +1,150 @@
+/* ========================================
+   HKEYITNA - Theme Principal
+   Palette de couleurs et styles de base
+   ======================================== */
+
+:root {
+  /* Palette pastel exacte */
+  --hk-cream: #FFFACD;
+  --hk-light-blue: #ADD8E6;
+  --hk-pink: #FFB6D9;
+  --hk-blue: #6B9BD1;
+  --hk-dark-blue: #5B8AB8;
+  
+  /* Dégradés */
+  --hk-gradient-primary: linear-gradient(135deg, #ADD8E6 0%, #6B9BD1 50%, #5B8AB8 100%);
+  --hk-gradient-accent: linear-gradient(135deg, #FFB6D9 0%, #6B9BD1 100%);
+  --hk-gradient-soft: linear-gradient(90deg, #FFFACD 0%, #ADD8E6 25%, #FFB6D9 50%, #6B9BD1 75%, #ADD8E6 100%);
+  --hk-gradient-sidebar: linear-gradient(180deg, #5B8AB8 0%, #6B9BD1 50%, #ADD8E6 100%);
+}
+
+/* ========================================
+   BOUTONS - Couleurs pastel
+   ======================================== */
+
+.btn-primary {
+  background: var(--hk-blue) !important;
+  border-color: var(--hk-blue) !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background: var(--hk-dark-blue) !important;
+  border-color: var(--hk-dark-blue) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(107, 155, 209, 0.3) !important;
+}
+
+.btn-info {
+  background: var(--hk-light-blue) !important;
+  border-color: var(--hk-light-blue) !important;
+  color: var(--hk-dark-blue) !important;
+}
+
+.btn-info:hover {
+  background: var(--hk-blue) !important;
+  border-color: var(--hk-blue) !important;
+  color: white !important;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #ADD8E6 0%, #6B9BD1 100%) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.btn-danger {
+  background: var(--hk-pink) !important;
+  border-color: var(--hk-pink) !important;
+  color: #fff !important;
+}
+
+.btn-warning {
+  background: var(--hk-cream) !important;
+  border-color: var(--hk-cream) !important;
+  color: var(--hk-dark-blue) !important;
+}
+
+/* ========================================
+   CARTES - Styles et couleurs
+   ======================================== */
+
+.card-stats .icon {
+  background: var(--hk-gradient-primary) !important;
+  color: white !important;
+}
+
+.card-stats .icon i {
+  color: white !important;
+}
+
+/* Icônes des cartes de stats avec couleurs différentes */
+.bg-gradient-red {
+  background: linear-gradient(135deg, #FFB6D9 0%, #FF9FC9 100%) !important;
+}
+
+.bg-gradient-orange {
+  background: linear-gradient(135deg, #FFFACD 0%, #FFE4A0 100%) !important;
+}
+
+.bg-gradient-info {
+  background: var(--hk-gradient-primary) !important;
+}
+
+.bg-gradient-green {
+  background: linear-gradient(135deg, #ADD8E6 0%, #87CEEB 100%) !important;
+}
+
+/* ========================================
+   BADGES - Statuts colorés
+   ======================================== */
+
+.badge-success {
+  background-color: var(--hk-light-blue) !important;
+  color: var(--hk-dark-blue) !important;
+}
+
+.badge-warning {
+  background-color: var(--hk-cream) !important;
+  color: var(--hk-dark-blue) !important;
+}
+
+.badge-danger {
+  background-color: var(--hk-pink) !important;
+  color: white !important;
+}
+
+.badge-info {
+  background-color: var(--hk-blue) !important;
+  color: white !important;
+}
+
+.badge-primary {
+  background-color: var(--hk-dark-blue) !important;
+  color: white !important;
+}
+
+.bg-success {
+  background-color: var(--hk-light-blue) !important;
+}
+
+.bg-warning {
+  background-color: var(--hk-cream) !important;
+}
+
+.bg-danger {
+  background-color: var(--hk-pink) !important;
+}
+
+/* ========================================
+   LINKS - Liens
+   ======================================== */
+
+a {
+  color: var(--hk-blue) !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: var(--hk-dark-blue) !important;
+}

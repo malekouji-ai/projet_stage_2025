@@ -1,0 +1,592 @@
+/* ========================================
+   HKEYITNA - SIDEBAR & NAVBAR FIX FINAL
+   ======================================== */
+
+/* Reset COMPLET - écrase TOUT */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#root {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Sidebar Navigation - Position ABSOLUE fixe */
+.navbar-vertical,
+#sidenav-main {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 250px !important;
+  height: 100vh !important;
+  z-index: 1050 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  background: linear-gradient(180deg, #5B8AB8 0%, #6B9BD1 50%, #ADD8E6 100%) !important;
+  box-shadow: 2px 0 20px rgba(91, 138, 184, 0.15) !important;
+  transition: transform 0.3s ease-in-out !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Logo dans la sidebar */
+.navbar-vertical .navbar-brand {
+  padding: 1.5rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 0.5rem !important;
+  margin: 1rem !important;
+  min-height: 100px !important;
+}
+
+.navbar-vertical .navbar-brand img {
+  max-height: 80px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* Navigation */
+.navbar-vertical .navbar-nav {
+  padding: 1rem 0 !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+.navbar-vertical .navbar-nav .nav-item {
+  width: 100% !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 500 !important;
+  padding: 0.875rem 1rem !important;
+  margin: 0.25rem 0.5rem !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateX(5px) !important;
+  color: white !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link.active {
+  background: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2) !important;
+  font-weight: 600 !important;
+  color: white !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link i {
+  color: #FFFACD !important;
+  font-size: 1rem !important;
+  margin-right: 0.75rem !important;
+  min-width: 24px !important;
+}
+
+/* Scrollbar personnalisée pour la sidebar */
+.navbar-vertical::-webkit-scrollbar {
+  width: 6px;
+}
+
+.navbar-vertical::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-vertical::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.navbar-vertical::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Container de la sidebar */
+.navbar-vertical .container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ========================================
+   MAIN CONTENT - Ajustement
+   ======================================== */
+
+.main-content {
+  position: relative !important;
+  min-height: 100vh !important;
+  transition: margin-left 0.3s ease-in-out !important;
+}
+
+/* ========================================
+   NAVBAR TOP (Header)
+   ======================================== */
+
+.navbar-top {
+  position: relative !important;
+  z-index: 100 !important;
+  background: white !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.navbar-top .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1rem 1.5rem !important;
+}
+
+.navbar-top .navbar-brand {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #32325d !important;
+}
+
+/* Navbar search */
+.navbar-search {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar-search .form-control {
+  border: 1px solid #dee2e6 !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.navbar-search .form-control:focus {
+  border-color: #6B9BD1 !important;
+  box-shadow: 0 0 0 0.2rem rgba(107, 155, 209, 0.25) !important;
+}
+
+/* Navbar nav */
+.navbar-top .navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.navbar-top .navbar-nav .nav-item {
+  margin-left: 0.5rem !important;
+}
+
+.navbar-top .navbar-nav .nav-link {
+  color: #525f7f !important;
+  padding: 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.15s ease !important;
+}
+
+.navbar-top .navbar-nav .nav-link:hover {
+  color: #6B9BD1 !important;
+  background: rgba(107, 155, 209, 0.1) !important;
+}
+
+.navbar-top .navbar-nav .nav-link i {
+  font-size: 1rem !important;
+}
+
+/* User dropdown */
+.navbar-top .dropdown-menu {
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  margin-top: 0.5rem !important;
+}
+
+.navbar-top .dropdown-item {
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.15s ease !important;
+}
+
+.navbar-top .dropdown-item:hover {
+  background-color: rgba(107, 155, 209, 0.1) !important;
+  color: #5B8AB8 !important;
+}
+
+.navbar-top .dropdown-item i {
+  margin-right: 0.75rem !important;
+  color: #8898aa !important;
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP (≥ 1200px)
+   ======================================== */
+
+@media (min-width: 1200px) {
+  /* Sidebar visible */
+  .navbar-vertical,
+  #sidenav-main {
+    transform: translateX(0) !important;
+    display: block !important;
+  }
+  
+  /* Main content TOUJOURS décalé */
+  .main-content {
+    margin-left: 250px !important;
+    width: calc(100% - 250px) !important;
+  }
+  
+  /* Masquer le bouton hamburger */
+  .sidenav-toggler,
+  .navbar-toggler {
+    display: none !important;
+  }
+  
+  /* Footer décalé aussi */
+  .footer {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Header pleine largeur dans le main-content */
+  .header {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px - 1199px)
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* Sidebar cachée par défaut */
+  .navbar-vertical,
+  #sidenav-main {
+    transform: translateX(-100%) !important;
+  }
+  
+  /* Sidebar visible avec classe show */
+  .navbar-vertical.show,
+  #sidenav-main.show {
+    transform: translateX(0) !important;
+  }
+  
+  /* Main content PLEINE LARGEUR */
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Header pleine largeur */
+  .header {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  
+  /* Bouton hamburger visible */
+  .sidenav-toggler {
+    display: block !important;
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    z-index: 1060 !important;
+    background: #6B9BD1 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(107, 155, 209, 0.3) !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .sidenav-toggler:hover {
+    background: #5B8AB8 !important;
+  }
+  
+  .sidenav-toggler i {
+    font-size: 1.25rem !important;
+  }
+  
+  /* Overlay */
+  .sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .sidenav-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Footer pleine largeur */
+  .footer {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Ajuster le padding du navbar top pour le bouton */
+  .navbar-top .container-fluid {
+    padding-left: 5rem !important;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (< 768px)
+   ======================================== */
+
+@media (max-width: 767px) {
+  /* Sidebar plus large sur mobile */
+  .navbar-vertical,
+  #sidenav-main {
+    width: 280px !important;
+    transform: translateX(-100%) !important;
+  }
+  
+  /* Sidebar visible avec classe show */
+  .navbar-vertical.show,
+  #sidenav-main.show {
+    transform: translateX(0) !important;
+  }
+  
+  /* Main content PLEINE LARGEUR */
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Header pleine largeur */
+  .header {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  
+  .navbar-top .container-fluid {
+    padding: 0.75rem 1rem !important;
+    padding-left: 4.5rem !important;
+  }
+  
+  .navbar-top .navbar-brand {
+    font-size: 1rem !important;
+  }
+  
+  /* Bouton hamburger */
+  .sidenav-toggler {
+    display: block !important;
+    position: fixed !important;
+    top: 0.75rem !important;
+    left: 0.75rem !important;
+    z-index: 1060 !important;
+    background: #6B9BD1 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(107, 155, 209, 0.3) !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .sidenav-toggler:hover {
+    background: #5B8AB8 !important;
+  }
+  
+  .sidenav-toggler i {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Overlay */
+  .sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .sidenav-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Footer */
+  .footer {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 1.5rem 1rem !important;
+  }
+  
+  /* Cacher les éléments non essentiels */
+  .navbar-search {
+    display: none !important;
+  }
+  
+  /* Navbar items responsive */
+  .navbar-top .navbar-nav .nav-link {
+    padding: 0.375rem !important;
+  }
+  
+  /* Logo sidebar plus petit */
+  .navbar-vertical .navbar-brand {
+    min-height: 80px !important;
+    padding: 1rem 0.75rem !important;
+    margin: 0.75rem !important;
+  }
+  
+  .navbar-vertical .navbar-brand img {
+    max-height: 60px !important;
+  }
+  
+  /* Nav links plus compacts */
+  .navbar-vertical .navbar-nav .nav-link {
+    padding: 0.75rem 0.875rem !important;
+    margin: 0.2rem 0.5rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .navbar-vertical .navbar-nav .nav-link i {
+    font-size: 0.9rem !important;
+    margin-right: 0.625rem !important;
+  }
+}
+
+/* ========================================
+   TRÈS PETIT MOBILE (< 400px)
+   ======================================== */
+
+@media (max-width: 399px) {
+  .navbar-vertical {
+    width: 260px !important;
+  }
+  
+  .navbar-top .container-fluid {
+    padding-left: 4rem !important;
+  }
+  
+  .sidenav-toggler {
+    width: 40px !important;
+    height: 40px !important;
+    top: 0.5rem !important;
+    left: 0.5rem !important;
+  }
+  
+  .sidenav-toggler i {
+    font-size: 1rem !important;
+  }
+}
+
+/* ========================================
+   FIXES ADDITIONNELS
+   ======================================== */
+
+/* Empêcher le body de scroller quand la sidebar est ouverte sur mobile */
+body.sidenav-open {
+  overflow: hidden;
+}
+
+/* Fix pour les éléments qui sortent de la sidebar */
+.navbar-vertical * {
+  box-sizing: border-box;
+}
+
+/* Fix pour le collapse de la sidebar sur mobile */
+.navbar-vertical .navbar-collapse {
+  background: transparent !important;
+}
+
+.navbar-vertical .navbar-collapse.show {
+  background: transparent !important;
+}
+
+/* Fix pour les dropdowns dans la navbar top */
+.navbar-top .dropdown-menu {
+  position: absolute !important;
+}
+
+/* Fix z-index pour les modales */
+.modal {
+  z-index: 1070 !important;
+}
+
+.modal-backdrop {
+  z-index: 1060 !important;
+}
+
+/* Assurer que la sidebar est toujours au-dessus du contenu */
+.navbar-vertical {
+  z-index: 1050 !important;
+}
+
+.sidenav-toggler {
+  z-index: 1060 !important;
+}
+
+.sidenav-overlay {
+  z-index: 1040 !important;
+}
+
+/* Fix pour les liens actifs */
+.navbar-vertical .navbar-nav .nav-link[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2) !important;
+  font-weight: 600 !important;
+  color: white !important;
+}
+
+/* Animation smooth pour le toggle */
+.navbar-vertical,
+.sidenav-overlay,
+.main-content {
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* Fix pour le header avec les stats qui ne doit pas être caché par la sidebar */
+.header {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Print styles */
+@media print {
+  .navbar-vertical,
+  .sidenav-toggler,
+  .sidenav-overlay {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}

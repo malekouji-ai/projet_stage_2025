@@ -1,0 +1,320 @@
+/* Custom styles for Auth pages (Login & Register) - DESIGN PROFESSIONNEL MODERNE */
+
+/* Background gradient moderne professionnel - Plus sombre et sophistiqué */
+.bg-default {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #475569) !important;
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay avec des formes géométriques modernes */
+.bg-default::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Auth page centering */
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo/Title styling avec dégradé */
+.auth-title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5rem !important;
+  margin-bottom: 0.5rem;
+  text-shadow: none;
+}
+
+/* Sous-titre de bienvenue */
+.text-muted {
+  color: #64748b !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+}
+
+/* Card modern glassmorphism effect - Plus visible et élégant */
+.bg-secondary.shadow {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(30px) !important;
+  box-shadow: 
+    0 8px 32px 0 rgba(37, 99, 235, 0.2),
+    0 30px 60px -15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.5) !important;
+  border-radius: 2rem !important;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto !important;
+  max-width: 500px !important;
+}
+
+/* Effet de brillance sur la carte */
+.bg-secondary.shadow::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(37, 99, 235, 0.05),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Card header styling moderne */
+.card-header.bg-transparent {
+  border-bottom: none !important;
+  padding: 3rem 2rem 1.5rem !important;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.card-body {
+  padding: 2rem 2.5rem !important;
+  position: relative;
+  z-index: 1;
+}
+
+.card-footer {
+  background: transparent !important;
+  border: none !important;
+  padding: 1rem 2.5rem 3rem !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Input focus effect moderne */
+.input-group-alternative {
+  background: #f8fafc !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid #e2e8f0 !important;
+}
+
+.input-group-alternative:focus-within {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1) !important;
+  transform: translateY(-2px);
+  background: white !important;
+}
+
+.input-group-alternative input {
+  background: transparent !important;
+  border: none !important;
+  padding: 1rem 1.25rem !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  color: #1e293b !important;
+}
+
+.input-group-alternative input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.input-group-alternative input:focus {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.input-group-alternative .input-group-text {
+  background: transparent !important;
+  border: none !important;
+  color: #64748b !important;
+  padding-left: 1.25rem !important;
+}
+
+.input-group-alternative:focus-within .input-group-text {
+  color: #2563eb !important;
+}
+
+/* Button hover effect moderne avec dégradé */
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%) !important;
+  border: none !important;
+  padding: 1rem 2rem !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 30px -5px rgba(37, 99, 235, 0.5) !important;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Link styling moderne */
+.text-light {
+  color: white !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-light:hover {
+  color: #93c5fd !important;
+  text-decoration: none !important;
+  transform: translateX(3px);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Alert styling moderne */
+.alert {
+  border-radius: 1rem !important;
+  border: none !important;
+  padding: 1rem 1.5rem !important;
+  border-left: 4px solid !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.alert-success {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-left-color: #10b981 !important;
+  color: #065f46 !important;
+}
+
+.alert-danger {
+  background: rgba(239, 68, 68, 0.15) !important;
+  border-left-color: #ef4444 !important;
+  color: #991b1b !important;
+}
+
+/* Form labels modernes */
+.form-control-label {
+  font-weight: 600 !important;
+  color: #374151 !important;
+  font-size: 0.875rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .auth-title {
+    font-size: 2rem !important;
+  }
+  
+  .main-content {
+    padding: 2rem 1rem;
+  }
+  
+  .bg-secondary.shadow {
+    border-radius: 1rem !important;
+  }
+}
+
+/* Animation for card appearance moderne */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Particles effect subtil - Plus visible */
+.bg-default::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08) 2px, transparent 2px),
+    radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.08) 2px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 200px 200px, 150px 150px, 180px 180px, 220px 220px;
+  animation: particlesFloat 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes particlesFloat {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* Logo animation au chargement */
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.auth-logo {
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
